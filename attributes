@@ -9,6 +9,7 @@ attribute dev_type;
 
 # All types used for processes.
 attribute domain;
+attribute tracefs_type;
 
 # Temporary attribute used for migrating permissions out of domain.
 # Motivation: Domain is overly permissive. Start removing permissions
