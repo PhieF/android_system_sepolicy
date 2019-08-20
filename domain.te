@@ -1,4 +1,5 @@
 # Rules for all domains.
+type preinstall;
 
 # Allow reaping by init.
 allow domain init:process sigchld;
@@ -491,6 +492,7 @@ neverallow {
   -system_server
   -system_app
   -init
+  -preinstall
   -installd # for relabelfrom and unlink, check for this in explicit neverallow
 } system_data_file:file no_w_file_perms;
 # do not grant anything greater than r_file_perms and relabelfrom unlink

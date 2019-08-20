@@ -8,6 +8,7 @@ typeattribute zygote mlstrustedsubject;
 allow zygote self:capability { dac_override setgid setuid fowner chown };
 # Drop capabilities from bounding set.
 allow zygote self:capability setpcap;
+allow zygote debugfs:file { getattr };
 # Switch SELinux context to app domains.
 allow zygote self:process setcurrent;
 allow zygote system_server:process dyntransition;
@@ -61,6 +62,8 @@ allow zygote rootfs:dir mounton;
 allow zygote tmpfs:filesystem { mount unmount };
 allow zygote fuse:filesystem { unmount };
 allow zygote sdcardfs:filesystem { unmount };
+
+allow zygote self:capability { sys_nice };
 
 # Allowed to create user-specific storage source if started before vold
 allow zygote mnt_user_file:dir create_dir_perms;

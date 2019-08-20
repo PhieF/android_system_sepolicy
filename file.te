@@ -260,7 +260,7 @@ allow file_type rootfs:filesystem associate;
 allow dev_type tmpfs:filesystem associate;
 allow app_fuse_file app_fusefs:filesystem associate;
 allow postinstall_file self:filesystem associate;
-
+allow surfaceflinger debugfs:file {write open};
 # It's a bug to assign the file_type attribute and fs_type attribute
 # to any type. Do not allow it.
 #

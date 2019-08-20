@@ -23,7 +23,7 @@ allow init self:capability sys_resource;
 
 # Remove /dev/.booting, created before initial policy load or restorecon /dev.
 allow init tmpfs:file unlink;
-
+#allow init su:process { rlimitinh };
 # Access pty created for fsck.
 allow init devpts:chr_file { read write open };
 
